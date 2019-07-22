@@ -67,6 +67,10 @@ namespace custom
                     objCustomInfo = new customInfo();
                     objCustomInfo.fullName = (string)sub;
                     objCustomInfo.lastName = (string)sub.Split(' ').Last();
+                    if(objCustomInfo.fullName.Substring(Math.Max(0, objCustomInfo.fullName.Length - 2)) != "\r")
+                    {
+                        objCustomInfo.fullName += "\r";
+                    }
                     
                     objListCustom_Info.Add(objCustomInfo);
                 }
